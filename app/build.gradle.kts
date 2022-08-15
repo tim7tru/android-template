@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.*
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -18,6 +21,10 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com\"")
+            buildConfigField("String", "API_KEY", getLocalProperty("API_KEY").toString())
+        }
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -79,7 +86,9 @@ dependencies {
 
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.4.0")
 
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
@@ -90,4 +99,16 @@ dependencies {
     // Android Testing
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+}
+
+fun getLocalProperty(key: String, file: String = "local.properties"): Any {
+    val properties = Properties()
+    val localProperties = File(file)
+    if (localProperties.isFile) {
+        InputStreamReader(FileInputStream(localProperties), Charsets.UTF_8).use { reader ->
+            properties.load(reader)
+        }
+    } else error("File from not found")
+
+    return "\"${properties.getProperty(key)}\""
 }

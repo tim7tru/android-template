@@ -1,0 +1,30 @@
+package com.timmytruong.template.data.model
+
+enum class Section(val apiName: String) {
+    ARTS("arts"),
+    AUTOMOBILES("automobiles"),
+    BOOKS("books"),
+    BUSINESS("business"),
+    FASHION("fashion"),
+    FOOD("food"),
+    HEALTH("health"),
+    HOME("home"),
+    INSIDER("insider"),
+    MAGAZINE("magazine"),
+    MOVIES("movies"),
+    NY_REGION("nyregion"),
+    OBITUARIES("obituaries"),
+    OPINION("opinion"),
+    POLITICS("politics"),
+    REAL_ESTATE("realestate"),
+    SCIENCE("science"),
+    SPORTS("sports"),
+    SUNDAY_REVIEW("sundayreview"),
+    TECHNOLOGY("technology"),
+    THEATER("theater"),
+    T_MAGAZINE("t-magazine"),
+    TRAVEL("travel"),
+    UPSHOT("upshot"),
+    US("us"),
+    WORLD("world");
+}
