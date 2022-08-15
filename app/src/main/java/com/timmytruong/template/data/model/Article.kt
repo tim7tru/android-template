@@ -8,6 +8,6 @@ data class Article(
     @field:Json(name = "abstract") val abstract: String,
     @field:Json(name = "url") val url: String,
     @field:Json(name = "uri") val uri: String,
-    @field:Json(name = "byLine") val byLine: String,
+    @field:Json(name = "byLine") val byLine: String?,
 //    @field:Json(name = "multimedia") val multimedia: List<Media>
 )
