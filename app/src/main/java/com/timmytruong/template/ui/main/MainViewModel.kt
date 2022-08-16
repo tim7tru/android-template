@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.timmytruong.template.Event
+import com.timmytruong.template.util.Event
 import com.timmytruong.template.data.model.Result
 import com.timmytruong.template.data.TopStoriesRepository
 import com.timmytruong.template.data.model.Article

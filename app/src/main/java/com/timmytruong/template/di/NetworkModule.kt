@@ -44,20 +44,16 @@ object NetworkModule {
     @Provides
     fun provideTopStoriesService(retrofit: Retrofit) = retrofit.create(TopStoriesService::class.java)
 
-    private fun OkHttpClient.Builder.addAuthorizationInterceptor(): OkHttpClient.Builder {
-        return addInterceptor {
-            val request = it.request()
-            val newUrl = request.url.newBuilder().addQueryParameter("api-key", BuildConfig.API_KEY).build()
-            val newRequest = request.newBuilder().url(newUrl).build()
-            return@addInterceptor it.proceed(newRequest)
-        }
+    private fun OkHttpClient.Builder.addAuthorizationInterceptor()= addInterceptor {
+        val request = it.request()
+        val newUrl = request.url.newBuilder().addQueryParameter("api-key", BuildConfig.API_KEY).build()
+        val newRequest = request.newBuilder().url(newUrl).build()
+        return@addInterceptor it.proceed(newRequest)
     }
 
-    private fun OkHttpClient.Builder.addLoggingInterceptor(): OkHttpClient.Builder {
-        return addInterceptor(
-            HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BASIC
-            }
-        )
-    }
+    private fun OkHttpClient.Builder.addLoggingInterceptor() = addInterceptor(
+        HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BASIC
+        }
+    )
 }

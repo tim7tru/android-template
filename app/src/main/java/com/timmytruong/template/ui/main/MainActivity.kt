@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
-import com.timmytruong.template.Event
+import com.timmytruong.template.util.Event
 import com.timmytruong.template.data.model.Section
 import com.timmytruong.template.databinding.ActivityMainBinding
 import com.timmytruong.template.ui.WebViewActivity

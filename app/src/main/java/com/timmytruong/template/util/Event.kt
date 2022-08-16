@@ -1,4 +1,4 @@
-package com.timmytruong.template
+package com.timmytruong.template.util
 
 class Event<out T>(private val item: T) {
 
