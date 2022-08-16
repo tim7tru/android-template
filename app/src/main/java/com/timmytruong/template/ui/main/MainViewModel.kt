@@ -13,8 +13,6 @@ import com.timmytruong.template.data.model.Section
 import com.timmytruong.template.ui.adapter.ArticleItem
 import kotlinx.coroutines.launch
 
-internal const val URL_KEY = "url-key"
-
 class MainViewModel: ViewModel() {
 
     private val topStoriesRepository: TopStoriesRepository = TopStoriesRepository()

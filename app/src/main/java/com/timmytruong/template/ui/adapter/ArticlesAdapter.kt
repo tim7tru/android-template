@@ -11,6 +11,11 @@ import com.timmytruong.template.databinding.ItemArticleBinding
 
 class ArticlesAdapter: RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
 
+    companion object {
+        private const val THUMBNAIL_WIDTH = 750
+        private const val THUMBNAIL_HEIGHT = 200
+    }
+
     private val articles = mutableListOf<ArticleItem>()
 
     private lateinit var context: Context
@@ -38,7 +43,7 @@ class ArticlesAdapter: RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>()
     private fun ItemArticleBinding.loadImage(url: String) = Glide
         .with(context)
         .load(url)
-        .apply(RequestOptions().override(750, 200))
+        .apply(RequestOptions().override(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT))
         .into(thumbnail)
 
     override fun getItemCount(): Int = articles.size

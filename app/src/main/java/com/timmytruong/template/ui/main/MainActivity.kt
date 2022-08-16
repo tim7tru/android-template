@@ -14,6 +14,10 @@ import com.timmytruong.template.ui.adapter.ArticlesAdapter
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val URL_KEY = "url-key"
+    }
+
     private val mainViewModel: MainViewModel by viewModels()
 
     private lateinit var binding: ActivityMainBinding
