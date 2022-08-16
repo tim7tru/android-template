@@ -53,7 +53,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1")
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.1")
@@ -83,6 +83,9 @@ dependencies {
 
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
+
+    // KoTest Assertions
+    testImplementation("io.kotest:kotest-assertions-core:5.4.2")
 
     // Android Testing
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
