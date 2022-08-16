@@ -73,6 +73,10 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.0-alpha02")
     kapt("androidx.room:room-compiler:2.5.0-alpha02")
 
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.13.2")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.13.2")
+
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
