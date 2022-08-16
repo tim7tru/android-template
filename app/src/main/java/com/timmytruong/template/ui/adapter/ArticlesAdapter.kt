@@ -24,6 +24,7 @@ class ArticlesAdapter: RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>()
             title.text = article.title
             byLine.text = byLine.text
             description.text = article.abstract
+            root.setOnClickListener { article.onClick(article) }
         }
     }
 

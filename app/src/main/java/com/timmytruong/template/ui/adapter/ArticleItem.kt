@@ -4,5 +4,6 @@ data class ArticleItem(
     val title: String,
     val abstract: String,
     val url: String,
-    val byLine: String
+    val byLine: String,
+    val onClick: (ArticleItem) -> Unit
 )
