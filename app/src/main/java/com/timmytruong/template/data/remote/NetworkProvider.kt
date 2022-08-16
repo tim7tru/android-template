@@ -1,11 +1,11 @@
-package com.timmytruong.template.data
+package com.timmytruong.template.data.remote
 
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import com.timmytruong.template.BuildConfig
-import com.timmytruong.template.data.adapter.SectionAdapter
+import com.timmytruong.template.data.model.adapter.SectionAdapter
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object NetworkProvider {

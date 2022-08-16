@@ -1,4 +1,4 @@
-package com.timmytruong.template.data.adapter
+package com.timmytruong.template.data.model.adapter
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson

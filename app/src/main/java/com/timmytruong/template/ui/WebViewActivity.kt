@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import com.timmytruong.template.databinding.ActivityWebViewBinding
+import com.timmytruong.template.ui.main.URL_KEY
 
 class WebViewActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.timmytruong.template.data
+package com.timmytruong.template.data.remote
 
 import com.timmytruong.template.data.model.NYTResponse
 import retrofit2.Response

@@ -1,6 +1,9 @@
 package com.timmytruong.template.data
 
+import com.timmytruong.template.data.model.Result
 import com.timmytruong.template.data.model.Section
+import com.timmytruong.template.data.remote.NetworkProvider
+import com.timmytruong.template.data.remote.TopStoriesService
 
 class TopStoriesRepository {
 

@@ -1,4 +1,4 @@
-package com.timmytruong.template.ui
+package com.timmytruong.template.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import com.timmytruong.template.Event
 import com.timmytruong.template.data.model.Section
 import com.timmytruong.template.databinding.ActivityMainBinding
+import com.timmytruong.template.ui.WebViewActivity
 import com.timmytruong.template.ui.adapter.ArticleItem
 import com.timmytruong.template.ui.adapter.ArticlesAdapter
 

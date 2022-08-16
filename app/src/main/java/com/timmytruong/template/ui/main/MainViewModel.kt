@@ -1,11 +1,11 @@
-package com.timmytruong.template.ui
+package com.timmytruong.template.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.timmytruong.template.Event
-import com.timmytruong.template.data.Result
+import com.timmytruong.template.data.model.Result
 import com.timmytruong.template.data.TopStoriesRepository
 import com.timmytruong.template.data.model.Article
 import com.timmytruong.template.data.model.NYTResponse
@@ -44,6 +44,7 @@ class MainViewModel: ViewModel() {
         title = title,
         abstract = abstract,
         url = url,
+        imageUrl = multimedia.first().url,
         byLine = byLine ?: "",
         onClick = { _url.postValue(Event(it.url)) }
     )
