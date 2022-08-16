@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import com.timmytruong.template.databinding.ActivityWebViewBinding
 import com.timmytruong.template.ui.main.MainActivity.Companion.URL_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WebViewActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWebViewBinding

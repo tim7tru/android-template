@@ -11,7 +11,10 @@ import com.timmytruong.template.databinding.ActivityMainBinding
 import com.timmytruong.template.ui.WebViewActivity
 import com.timmytruong.template.ui.adapter.ArticleItem
 import com.timmytruong.template.ui.adapter.ArticlesAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private var articleAdapter: ArticlesAdapter? = null
+    @Inject lateinit var articleAdapter: ArticlesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +42,8 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getStories(section = Section.ARTS)
     }
 
-    override fun onDestroy() {
-        articleAdapter = null
-        super.onDestroy()
-    }
-
     private fun handleArticles(articles: List<ArticleItem>) {
-        articleAdapter?.setItems(articles)
+        articleAdapter.setItems(articles)
     }
 
     private fun handleUrl(url: Event<String>) = url.get()?.let {

@@ -1,32 +1,48 @@
-package com.timmytruong.template.data.remote
+package com.timmytruong.template.di
 
 import com.squareup.moshi.Moshi
+import com.timmytruong.template.BuildConfig
+import com.timmytruong.template.data.model.adapter.SectionAdapter
+import com.timmytruong.template.data.remote.TopStoriesService
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import com.timmytruong.template.BuildConfig
-import com.timmytruong.template.data.model.adapter.SectionAdapter
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
-object NetworkProvider {
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
 
-    private var okHttpClient: OkHttpClient? = null
-    private var retrofit: Retrofit? = null
-    private var moshi: Moshi? = null
-
-    fun getOkHttpClient() = okHttpClient ?: OkHttpClient()
+    @Singleton
+    @Provides
+    fun provideOkHttpClient() = OkHttpClient()
         .newBuilder()
         .addAuthorizationInterceptor()
         .addLoggingInterceptor()
         .build()
-        .apply { okHttpClient = this }
 
-    fun getRetrofitService() = retrofit ?: Retrofit.Builder()
-        .client(getOkHttpClient())
+    @Singleton
+    @Provides
+    fun provideRetrofitService(okHttpClient: OkHttpClient, moshi: Moshi) = Retrofit.Builder()
+        .client(okHttpClient)
         .baseUrl(BuildConfig.BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create(getMoshi()))
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
-        .apply { retrofit = this }
+
+    @Singleton
+    @Provides
+    fun provideMoshi(sectionAdapter: SectionAdapter) = Moshi.Builder()
+        .add(sectionAdapter)
+        .build()
+
+    @Singleton
+    @Provides
+    fun provideTopStoriesService(retrofit: Retrofit) = retrofit.create(TopStoriesService::class.java)
 
     private fun OkHttpClient.Builder.addAuthorizationInterceptor(): OkHttpClient.Builder {
         return addInterceptor {
@@ -44,6 +60,4 @@ object NetworkProvider {
             }
         )
     }
-
-    private fun getMoshi(): Moshi = moshi ?: Moshi.Builder().add(SectionAdapter()).build().apply { moshi = this }
 }

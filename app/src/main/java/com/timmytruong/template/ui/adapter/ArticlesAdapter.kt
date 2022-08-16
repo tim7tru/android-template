@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.timmytruong.template.databinding.ItemArticleBinding
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
-class ArticlesAdapter: RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
+@ActivityScoped
+class ArticlesAdapter @Inject constructor(): RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
 
     companion object {
         private const val THUMBNAIL_WIDTH = 750

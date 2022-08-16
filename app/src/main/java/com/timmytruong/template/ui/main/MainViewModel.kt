@@ -11,11 +11,14 @@ import com.timmytruong.template.data.model.Article
 import com.timmytruong.template.data.model.NYTResponse
 import com.timmytruong.template.data.model.Section
 import com.timmytruong.template.ui.adapter.ArticleItem
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel: ViewModel() {
-
-    private val topStoriesRepository: TopStoriesRepository = TopStoriesRepository()
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val topStoriesRepository: TopStoriesRepository
+): ViewModel() {
 
     private val _url: MutableLiveData<Event<String>> = MutableLiveData()
     val url: LiveData<Event<String>> = _url
