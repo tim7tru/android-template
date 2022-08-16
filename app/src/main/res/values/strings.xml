@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">template</string>
+    <string name="app_name">NYT Viewer</string>
+    <string name="thumbnail">thumbnail</string>
 </resources>

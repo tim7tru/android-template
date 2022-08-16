@@ -1,9 +1,11 @@
 package com.timmytruong.template.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import com.timmytruong.template.Event
 import com.timmytruong.template.data.model.Section
 import com.timmytruong.template.databinding.ActivityMainBinding
 import com.timmytruong.template.ui.adapter.ArticleItem
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         mainViewModel.stories.observe(this, ::handleArticles)
+        mainViewModel.url.observe(this, ::handleUrl)
         mainViewModel.getStories(section = Section.ARTS)
     }
 
@@ -38,5 +41,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleArticles(articles: List<ArticleItem>) {
         articleAdapter?.setItems(articles)
+    }
+
+    private fun handleUrl(url: Event<String>) = url.get()?.let {
+        val intent = Intent(this, WebViewActivity::class.java).putExtra(URL_KEY, it)
+        startActivity(intent)
     }
 }
