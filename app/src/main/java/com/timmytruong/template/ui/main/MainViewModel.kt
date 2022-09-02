@@ -10,7 +10,7 @@ import com.timmytruong.template.data.TopStoriesRepository
 import com.timmytruong.template.data.model.Article
 import com.timmytruong.template.data.model.NYTResponse
 import com.timmytruong.template.data.model.Section
-import com.timmytruong.template.ui.adapter.ArticleItem
+import com.timmytruong.template.ui.article.ArticleItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

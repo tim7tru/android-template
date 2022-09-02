@@ -43,6 +43,11 @@ android {
 
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.3.0"
     }
 
     kapt {
@@ -51,6 +56,8 @@ android {
 }
 
 dependencies {
+
+    val composeVersion = "1.2.1"
 
     // AndroidX
     implementation("androidx.core:core-ktx:1.8.0")
@@ -88,8 +95,8 @@ dependencies {
     kapt("androidx.room:room-compiler:2.5.0-alpha02")
 
     // Glide
-    implementation("com.github.bumptech.glide:glide:4.13.2")
-    kapt("com.github.bumptech.glide:compiler:4.13.2")
+//    implementation("com.github.bumptech.glide:glide:4.13.2")
+//    kapt("com.github.bumptech.glide:compiler:4.13.2")
 
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -106,6 +113,15 @@ dependencies {
     // Android Testing
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+
+    // Compose
+    implementation("androidx.compose.runtime:runtime:$composeVersion")
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+    implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("com.github.skydoves:landscapist-glide:1.6.1")
 }
 
 fun getLocalProperty(key: String, file: String = "local.properties"): Any {
