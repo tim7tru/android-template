@@ -50,7 +50,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.activity:activity-ktx:1.7.2")
-    implementation("androidx.fragment:fragment-ktx:1.5.7")
+    implementation("androidx.fragment:fragment-ktx:1.6.0")
     implementation("androidx.core:core-ktx:1.10.1")
 
     // User Interface
@@ -65,10 +65,11 @@ dependencies {
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
     // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.40.1")
@@ -80,9 +81,9 @@ dependencies {
 
     // Room
     implementation("com.google.code.gson:gson:2.9.0")
-    implementation("androidx.room:room-runtime:2.6.0-alpha01")
-    implementation("androidx.room:room-ktx:2.6.0-alpha01")
-    kapt("androidx.room:room-compiler:2.6.0-alpha01")
+    implementation("androidx.room:room-runtime:2.6.0-alpha02")
+    implementation("androidx.room:room-ktx:2.6.0-alpha02")
+    kapt("androidx.room:room-compiler:2.6.0-alpha02")
 
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
