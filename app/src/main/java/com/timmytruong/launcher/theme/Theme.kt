@@ -1,4 +1,4 @@
-package com.timmytruong.template.theme
+package com.timmytruong.launcher.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

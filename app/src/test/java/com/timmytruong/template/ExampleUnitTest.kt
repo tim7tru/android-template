@@ -1,4 +1,4 @@
-package com.timmytruong.template
+package com.timmytruong.launcher
 
 import org.junit.Test
 

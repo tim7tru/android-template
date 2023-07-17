@@ -1,11 +1,11 @@
-package com.timmytruong.template
+package com.timmytruong.launcher
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import com.timmytruong.template.theme.MainAppTheme
+import com.timmytruong.launcher.theme.MainAppTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
