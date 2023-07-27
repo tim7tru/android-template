@@ -91,6 +91,8 @@ dependencies {
 
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+    testImplementation("org.robolectric:robolectric:4.9")
 
     // KoTest Assertions
     testImplementation("io.kotest:kotest-assertions-core:5.4.2")
