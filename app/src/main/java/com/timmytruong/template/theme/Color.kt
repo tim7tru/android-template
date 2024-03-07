@@ -2,12 +2,13 @@ package com.timmytruong.template.theme
 
 import androidx.compose.ui.graphics.Color
 
-val White500 = Color(0x80FFFFFF)
 
-val BlueGreyDark = Color(0xFF62757f)
-val BlueGrey = Color(0xFF8FA3AD)
-val BlueGreyLight = Color(0xFFBFD4DF)
+val PrimaryLight = Color(0xFFfcfcfc)
+val Primary = Color(0xFFcacaca)
+val PrimaryDark = Color(0x2c2c2c)
 
-val TealDark = Color(0xFF4F9B94)
-val Teal = Color(0xFF80CCC4)
-val TealLight = Color(0xFFB2FFF7)
+val onPrimary = Color(0xFF262626)
+
+val Green = Color(0xFF00AC8E)
+val GreenLight = Color(0xFF7ccfbd)
+val GreenDark = Color(0xFF007f61)
