@@ -55,8 +55,10 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.core:core-ktx:1.12.0")
 
+
     // User Interface
     implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.compose.material3:material3-android:1.2.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     // Lifecycle
@@ -78,7 +80,6 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.47")
 
     // Hilt ViewModels
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
 
     // Room
@@ -90,7 +91,7 @@ dependencies {
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
-
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
