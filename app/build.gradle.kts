@@ -58,7 +58,7 @@ dependencies {
 
     // User Interface
     implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.compose.material3:material3-android:1.2.0")
+    implementation("androidx.compose.material3:material3-android:1.2.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     // Lifecycle
@@ -92,6 +92,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
@@ -113,6 +114,8 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.runtime:runtime")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 
     // Glide
     implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
