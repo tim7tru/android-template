@@ -24,15 +24,16 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = PrimaryLight,
-    primaryVariant = PrimaryDark,
+    primary = Green,
+    primaryVariant = GreenDark,
     secondary = Green,
     secondaryVariant = GreenDark,
-    onPrimary = onPrimary,
+    onPrimary = Color.White,
     onBackground = onPrimary,
     onSurface = onPrimary,
     onSecondary = Color.White,
-    surface = Color.White
+    surface = Color.White,
+    background = PrimaryLight
 
     /* Other default colors to override
     background = Color.White,
@@ -55,11 +56,10 @@ fun MainAppTheme(
         Scaffold(
             topBar = {
                 TopAppBar(
-                    backgroundColor = Color.White,
+                    backgroundColor = MaterialTheme.colors.surface,
                 ) {
                     Text(
                         text = title,
-                        color = onPrimary,
                         style = MaterialTheme.typography.h2,
                         modifier = Modifier.padding(horizontal = 16.dp)
                     )
