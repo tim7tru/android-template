@@ -22,6 +22,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainApp() {
     return MainAppTheme("Template") {
-        Text("Timmy's main Android template 2023")
+        Text("Timmy's main Android template 2025")
     }
 }
